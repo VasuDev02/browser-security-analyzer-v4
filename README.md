@@ -1,114 +1,158 @@
-# \# 🔍 Browser Security Analyzer v3
+🔍 Browser Security Analyzer v3
 
-# 
+A modular and lightweight JavaScript security auditing tool that scans .js files for suspicious, insecure, or potentially malicious patterns.
+Designed for Security Analysts, Penetration Testers, and Developers who review browser scripts and Chrome extensions.
 
-# Browser Security Analyzer v3 is a lightweight command-line tool designed to scan JavaScript files for suspicious, insecure, or potentially malicious behavior.  
+✨ Key Features
+🛑 1. Suspicious JavaScript Functions Detection
 
-# This version includes a fully modular scanning engine, line-number detection, pattern-matching utilities, and recursive folder scanning.
+Identifies risky code patterns such as:
 
-# 
+eval()
 
-# Perfect for:
+new Function()
 
-# \- Security Analysts
+setTimeout("string"), setInterval("string")
 
-# \- Chrome Extension Reviewers
+document.write()
 
-# \- Penetration Testers
+Unsafe innerHTML usage
 
-# \- Web Developers validating third-party scripts
+window.open()
 
-# 
+🕵️ 2. Obfuscation Indicators
 
-# ---
+Recognizes hidden or encoded payloads:
 
-# 
+Hex-encoded values (\x41)
 
-# \## 🚀 Features
+Base64 payloads
 
-# 
+Overly long variable names (indicative of malware obfuscation)
 
-# \### ✔ Suspicious JavaScript Function Detection
+🔐 3. Crypto & Secret Misuse
 
-# Detects dangerous usage like:
+Flags:
 
-# \- `eval()`
+MD5 and SHA1 (weak hashing algorithms)
 
-# \- `new Function()`
+Hardcoded API keys, tokens, passwords
 
-# \- `setTimeout("string")`
+📌 4. DOM Manipulation Risks
 
-# \- `document.write()`
+Detects:
 
-# \- `innerHTML =`
+Cookie manipulation (document.cookie)
 
-# \- `window.open()`
+Hidden iframes
 
-# 
+Clipboard hijacking attempts
 
-# \### ✔ Obfuscation Indicators
+🌐 5. Network Activity Monitoring
 
-# \- Hex-encoded strings (`\\x41`)
+Alerts on:
 
-# \- Base64 strings
+Insecure HTTP calls
 
-# \- Overly long variable names (possible malware obfuscation)
+WebSocket connections
 
-# 
+Beacon API usage (data exfiltration risk)
 
-# \### ✔ Crypto Abuse Detection
+📄 6. Line-Number Reporting
 
-# \- Weak hashing (MD5, SHA1)
+Each finding includes:
 
-# \- Hardcoded secrets, tokens, passwords, or API keys
+Issue type
 
-# 
+Line number
 
-# \### ✔ DOM Manipulation Risks
+Extracted code snippet
 
-# \- Cookie modifications
+📂 7. Recursive Folder Scanning
 
-# \- Hidden iframes
+Scan one file or an entire folder of .js files.
 
-# \- Clipboard hijacking
+📁 Project Structure
+browser-security-analyzer-v3/
+│
+├── analyzer.py
+├── README.md
+├── sample-malicious.js
+│
+└── security_checks/
+    ├── utils.py
+    ├── suspicious_functions.py
+    ├── crypto_usage.py
+    ├── obfuscation_detector.py
+    ├── dom_manipulation.py
+    └── network_calls.py
 
-# 
+🛠️ Installation & Setup
+1. Install Python 3.8+
 
-# \### ✔ Network Request Monitoring
+Check version:
 
-# \- Insecure HTTP calls
-
-# \- WebSocket usage
-
-# \- Beacon API (exfiltration risk)
-
-# 
-
-# \### ✔ Line-Number Enabled Reports
-
-# Every finding includes:
-
-# \- Pattern type
-
-# \- Line number
-
-# \- Matched code
-
-# 
-
-# \### ✔ Recursive Folder Scanning
-
-# Scan \*hundreds\* of JS files at once.
-
-# 
-
-# ---
-
-# 
-
-# \## 📁 Project Structure
-
-# 
+python --version
 
 
+If not installed:
+https://www.python.org/downloads/
 
+2. Extract the Project Folder
+browser-security-analyzer-v3/
+
+3. Open Terminal / CMD
+
+Windows:
+Shift + Right-click → Open PowerShell here
+Mac/Linux:
+
+cd browser-security-analyzer-v3
+
+▶️ Usage
+
+Run the analyzer:
+
+python analyzer.py
+
+
+Enter the path of:
+
+a single JS file
+
+or an entire folder
+
+Output will be saved to:
+
+report.txt
+
+🧪 Testing
+
+Use the included file:
+
+sample-malicious.js
+
+🧩 Extending the Tool
+
+Add new rules by editing:
+
+security_checks/
+
+
+Possible upgrades:
+
+Severity scoring
+
+HTML/JSON export
+
+CLI arguments
+
+Chrome extension support
+
+🤝 Contributing
+
+Pull requests are welcome.
+
+📜 License
+
+MIT License.
