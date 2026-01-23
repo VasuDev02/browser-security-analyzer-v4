@@ -1,146 +1,114 @@
-# 🔍 Browser Security Analyzer v3
-A modular and lightweight JavaScript security auditing tool that scans `.js` files for suspicious, insecure, or potentially malicious patterns.  
-Designed for Security Analysts, Penetration Testers, and Developers who review browser scripts and Chrome extensions.
+# \# 🔍 Browser Security Analyzer v3
 
----
+# 
 
-## ✨ Key Features
+# Browser Security Analyzer v3 is a lightweight command-line tool designed to scan JavaScript files for suspicious, insecure, or potentially malicious behavior.  
 
-### 🛑 1. Suspicious JavaScript Functions Detection
-Identifies risky code patterns such as:
-- `eval()`
-- `new Function()`
-- `setTimeout("string")`, `setInterval("string")`
-- `document.write()`
-- Unsafe `innerHTML` usage
-- `window.open()`
+# This version includes a fully modular scanning engine, line-number detection, pattern-matching utilities, and recursive folder scanning.
 
-### 🕵️ 2. Obfuscation Indicators
-Recognizes hidden or encoded payloads:
-- Hex-encoded values (`\x41`)
-- Base64 payloads
-- Overly long variable names (indicative of malware obfuscation)
+# 
 
-### 🔐 3. Crypto & Secret Misuse
-Flags:
-- MD5 and SHA1 (weak hashing algorithms)
-- Hardcoded API keys, tokens, passwords
+# Perfect for:
 
-### 📌 4. DOM Manipulation Risks
-Detects:
-- Cookie manipulation (`document.cookie`)
-- Hidden iframes
-- Clipboard hijacking attempts
+# \- Security Analysts
 
-### 🌐 5. Network Activity Monitoring
-Alerts on:
-- Insecure HTTP calls
-- WebSocket connections
-- Beacon API usage (data exfiltration risk)
+# \- Chrome Extension Reviewers
 
-### 📄 6. Line-Number Reporting
-Each finding includes:
-- Issue type
-- Line number
-- Extracted code snippet
+# \- Penetration Testers
 
-### 📂 7. Folder-Wide Recursive Scanning
-Scan one file, or an entire folder containing hundreds of `.js` files.
+# \- Web Developers validating third-party scripts
 
----
+# 
 
-## 📁 Project Structure
-browser-security-analyzer-v3/
-│
-├── analyzer.py
-├── README.md
-├── sample-malicious.js
-│
-└── security_checks/
-├── utils.py
-├── suspicious_functions.py
-├── crypto_usage.py
-├── obfuscation_detector.py
-├── dom_manipulation.py
-└── network_calls.py
+# ---
 
+# 
 
----
+# \## 🚀 Features
 
-## 🛠️ Installation & Setup
+# 
 
-### 1. Install Python 3.8+
-```bash
-python --version
+# \### ✔ Suspicious JavaScript Function Detection
 
+# Detects dangerous usage like:
 
-If not installed:
-👉 https://www.python.org/downloads/
+# \- `eval()`
 
-2. Extract the Project Folder
-browser-security-analyzer-v3/
+# \- `new Function()`
 
-3. Open Terminal / CMD in the Folder
+# \- `setTimeout("string")`
 
-Windows:
+# \- `document.write()`
 
-Shift + Right Click → Open PowerShell window here
+# \- `innerHTML =`
 
+# \- `window.open()`
 
-Mac/Linux:
+# 
 
-cd browser-security-analyzer-v3
+# \### ✔ Obfuscation Indicators
 
-▶️ Usage
-Run the Analyzer
-python analyzer.py
+# \- Hex-encoded strings (`\\x41`)
 
+# \- Base64 strings
 
-You will be prompted:
+# \- Overly long variable names (possible malware obfuscation)
 
-Enter JS file or folder path to analyze:
+# 
 
-Example — Scan One File
-malicious-test.js
+# \### ✔ Crypto Abuse Detection
 
-Example — Scan Entire Folder
-C:\Users\YourName\Desktop\jsfiles
+# \- Weak hashing (MD5, SHA1)
 
-Output
+# \- Hardcoded secrets, tokens, passwords, or API keys
 
-All results are saved automatically to:
+# 
 
-report.txt
+# \### ✔ DOM Manipulation Risks
 
-🧪 Testing the Tool
+# \- Cookie modifications
 
-Use the included test file:
+# \- Hidden iframes
 
-sample-malicious.js
+# \- Clipboard hijacking
+
+# 
+
+# \### ✔ Network Request Monitoring
+
+# \- Insecure HTTP calls
+
+# \- WebSocket usage
+
+# \- Beacon API (exfiltration risk)
+
+# 
+
+# \### ✔ Line-Number Enabled Reports
+
+# Every finding includes:
+
+# \- Pattern type
+
+# \- Line number
+
+# \- Matched code
+
+# 
+
+# \### ✔ Recursive Folder Scanning
+
+# Scan \*hundreds\* of JS files at once.
+
+# 
+
+# ---
+
+# 
+
+# \## 📁 Project Structure
+
+# 
 
 
-Or create your own with suspicious patterns.
 
-🧩 Extending the Tool
-
-The architecture is modular. You can add new rules by editing files under:
-
-security_checks/
-
-
-Possible enhancements:
-
-Severity scoring system
-
-HTML/JSON report exporter
-
-Chrome extension scanner
-
-CLI argument support
-
-Want help implementing any of these? I can assist.
-
-🤝 Contributing
-
-Pull requests and feature requests are welcome.
-Feel free to fork, improve, and submit PRs.

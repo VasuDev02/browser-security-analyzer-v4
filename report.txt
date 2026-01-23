@@ -1,0 +1,53 @@
+
+
+===== FILE: C:\Users\vasud\Downloads\browser-security-analyzer\sample-malicious.js =====
+
+=== Suspicious Functions ===
+[!] Dangerous eval() usage | Line 2 | Code: eval(
+[!] setTimeout string execution | Line 3 | Code: setTimeout("
+[!] document.write usage | Line 17 | Code: document.write
+
+=== Obfuscation Indicators ===
+[!] Hex encoded strings detected
+[!] Base64 encoded payload detected
+[!] Long obfuscated variable name detected
+
+=== Crypto Issues ===
+[!] Weak Hash MD5 | Line 13 | Code: MD5
+[!] Hardcoded Secret | Line 10 | Code: password = "
+[!] Hardcoded Secret | Line 11 | Code: token = "
+[!] Hardcoded Secret | Line 12 | Code: key = "
+
+=== DOM Manipulation Risks ===
+[!] Cookie modification detected
+[!] Hidden iframe detected
+[!] Clipboard write detected
+
+=== Network Calls ===
+[!] Insecure HTTP call detected
+[!] Beacon API usage
+[!] WebSocket connection detected
+
+===== FILE: C:\Users\vasud\Downloads\browser-security-analyzer\sample1.js =====
+
+=== Suspicious Functions ===
+[!] Dangerous eval() usage | Line 2 | Code: eval(
+[!] setTimeout string execution | Line 3 | Code: setTimeout("
+[!] document.write usage | Line 4 | Code: document.write
+
+=== Obfuscation Indicators ===
+[!] Hex encoded strings detected
+
+=== Crypto Issues ===
+[!] Weak Hash MD5 | Line 13 | Code: MD5
+[!] Hardcoded Secret | Line 11 | Code: password = "
+[!] Hardcoded Secret | Line 12 | Code: secret = "
+
+=== DOM Manipulation Risks ===
+[!] Cookie modification detected
+[!] Clipboard write detected
+
+=== Network Calls ===
+[!] Insecure HTTP call detected
+[!] Beacon API usage
+[!] WebSocket connection detected
