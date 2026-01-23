@@ -1,158 +1,84 @@
-🔍 Browser Security Analyzer v3
+# Browser Security Analyzer v3
 
-A modular and lightweight JavaScript security auditing tool that scans .js files for suspicious, insecure, or potentially malicious patterns.
-Designed for Security Analysts, Penetration Testers, and Developers who review browser scripts and Chrome extensions.
+Browser Security Analyzer v3 is a lightweight and modular JavaScript security auditing tool. It scans `.js` files for suspicious, insecure, or potentially malicious patterns.
 
-✨ Key Features
-🛑 1. Suspicious JavaScript Functions Detection
+## Features
 
-Identifies risky code patterns such as:
+### Suspicious JavaScript Function Detection
+- eval()
+- new Function()
+- setTimeout("string") / setInterval("string")
+- document.write()
+- innerHTML usage
+- window.open()
 
-eval()
+### Obfuscation Indicators
+- Hex encoded strings (\x41)
+- Base64 encoded strings
+- Very long variable names
 
-new Function()
+### Crypto & Secrets Misuse
+- MD5, SHA1 detection
+- Hardcoded passwords, tokens, keys
 
-setTimeout("string"), setInterval("string")
+### DOM Manipulation Risks
+- document.cookie modification
+- Hidden iframes
+- Clipboard hijacking attempts
 
-document.write()
+### Network Activity Monitoring
+- Insecure HTTP calls
+- WebSocket connections
+- Beacon API usage
 
-Unsafe innerHTML usage
+### Line Number Reporting
+Every detection includes:
+- Issue type
+- Line number
+- Matching code snippet
 
-window.open()
+### Recursive Folder Scanning
+Scan a single JavaScript file or an entire directory.
 
-🕵️ 2. Obfuscation Indicators
+## Project Structure
 
-Recognizes hidden or encoded payloads:
+browser-security-analyzer-v3  
+├── analyzer.py  
+├── README.md   
+└── security_checks  
+    ├── utils.py  
+    ├── suspicious_functions.py  
+    ├── crypto_usage.py  
+    ├── obfuscation_detector.py  
+    ├── dom_manipulation.py  
+    └── network_calls.py  
 
-Hex-encoded values (\x41)
+## Installation
 
-Base64 payloads
-
-Overly long variable names (indicative of malware obfuscation)
-
-🔐 3. Crypto & Secret Misuse
-
-Flags:
-
-MD5 and SHA1 (weak hashing algorithms)
-
-Hardcoded API keys, tokens, passwords
-
-📌 4. DOM Manipulation Risks
-
-Detects:
-
-Cookie manipulation (document.cookie)
-
-Hidden iframes
-
-Clipboard hijacking attempts
-
-🌐 5. Network Activity Monitoring
-
-Alerts on:
-
-Insecure HTTP calls
-
-WebSocket connections
-
-Beacon API usage (data exfiltration risk)
-
-📄 6. Line-Number Reporting
-
-Each finding includes:
-
-Issue type
-
-Line number
-
-Extracted code snippet
-
-📂 7. Recursive Folder Scanning
-
-Scan one file or an entire folder of .js files.
-
-📁 Project Structure
-browser-security-analyzer-v3/
-│
-├── analyzer.py
-├── README.md
-├── sample-malicious.js
-│
-└── security_checks/
-    ├── utils.py
-    ├── suspicious_functions.py
-    ├── crypto_usage.py
-    ├── obfuscation_detector.py
-    ├── dom_manipulation.py
-    └── network_calls.py
-
-🛠️ Installation & Setup
-1. Install Python 3.8+
-
-Check version:
-
+### 1. Install Python 3.8+
 python --version
 
-
-If not installed:
+Download Python if needed:  
 https://www.python.org/downloads/
 
-2. Extract the Project Folder
-browser-security-analyzer-v3/
+### 2. Extract the project folder
 
-3. Open Terminal / CMD
+### 3. Open terminal inside the folder
+Windows: Shift + Right-click → Open PowerShell window here  
+Mac/Linux: cd browser-security-analyzer-v3
 
-Windows:
-Shift + Right-click → Open PowerShell here
-Mac/Linux:
-
-cd browser-security-analyzer-v3
-
-▶️ Usage
-
-Run the analyzer:
+## Usage
 
 python analyzer.py
 
+Enter a JS file path or folder path.  
+Output is saved to `report.txt`.
 
-Enter the path of:
+## Testing
+Use `sample-malicious.js`.
 
-a single JS file
+## Extending
+Add new rules inside `security_checks/`.
 
-or an entire folder
-
-Output will be saved to:
-
-report.txt
-
-🧪 Testing
-
-Use the included file:
-
-sample-malicious.js
-
-🧩 Extending the Tool
-
-Add new rules by editing:
-
-security_checks/
-
-
-Possible upgrades:
-
-Severity scoring
-
-HTML/JSON export
-
-CLI arguments
-
-Chrome extension support
-
-🤝 Contributing
-
-Pull requests are welcome.
-
-📜 License
-
-MIT License.
+## License
+MIT License
