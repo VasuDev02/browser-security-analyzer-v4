@@ -42,7 +42,7 @@ Scan a single JavaScript file or an entire directory.
 
 ## Project Structure
 
-browser-security-analyzer-v3  
+browser-security-analyzer-v4  
 ├── analyzer.py  
 ├── README.md   
 └── security_checks  
