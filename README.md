@@ -1,4 +1,4 @@
-# Browser Security Analyzer v3
+# Browser Security Analyzer v4
 
 Browser Security Analyzer v3 is a lightweight and modular JavaScript security auditing tool. It scans `.js` files for suspicious, insecure, or potentially malicious patterns.
 
